@@ -19,7 +19,7 @@ OS Used     : Windows 10
 void main(){
     //intialize variables used 
     int input1,input2;
-    float values,result;
+    float value,result;
 
     // print welcome message
     printf("                        ***********************************************\n"); 
@@ -38,13 +38,64 @@ void main(){
     //case for length
     case 1:
         printf("You selected Length. please select the conversion\n ");
-        printf(" 1.cm to m\n 2.m to cm\n");
-        scanf("%d",&input2);
+        printf(" 1.cm to m\n  2.m to cm\n");
         printf("Enter your choice:");
-        printf("\n");
+        scanf("%d",&input2);
+        
+        
+        switch (input2)
+        {
+        //case for converting cm to m
+        case 1:
+            printf("Enter the value you want to convert:");
+            scanf("%f",&value);
+            result = value/100;
+            printf(" %f cm = %f m",value,result);
+            break;
+        //case for convering m to cm
+        case 2:
+            printf("Enter the value you want to convert:");
+            scanf("%f",&value);
+            result = value*100;
+            printf(" %f m = %f cm",value,result);
+            break;
+        default:
+            printf("Invalid Input");
+            break;
+        }
+        break;
+    //case for speed
+    case 2:
+        printf("You selected Length. please select the conversion\n ");
+        printf(" 1.m/s to km/h\n  2.km/h to m/s\n");
+        printf("Enter your choice:");
+        scanf("%d",&input2);
+        
+        
+        switch (input2)
+        {
+        //case for converting m/s to km/h
+        case 1:
+            printf("Enter the value you want to convert:");
+            scanf("%f",&value);
+            result = value*3.6;
+            printf(" %f m/s = %f km/h",value,result);
+            break;
+        //case for convering km/h to m/s
+        case 2:
+            printf("Enter the value you want to convert:");
+            scanf("%f",&value);
+            result = value*0.277777778;
+            printf(" %f km/h = %f m/s",value,result);
+            break;
+        default:
+            printf("Invalid Input");
+            break;
+        }
         break;
     
     default:
+        printf("Invalid Input");
         break;
     }
 }
